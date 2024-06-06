@@ -7,11 +7,16 @@
 <h1>BUYSELL</h1>
 <hr>
 <h4>SOME_PRODUCTS</h4>
+<form action="/" method="get">
+    Find product by name: <input type="text" name="title"><br>
+    <input type="submit" name="find">
+</form>
 <#list products as product>
     <div>
-        <p><b>${product.title}</b> ${product.price} | <a href="/product/${product.id}">Details...</a></p>
-
+        <p><b>${product.title}</b> ${product.price} rub. | <a href="/product/${product.id}">Details...</a></p>
     </div>
+    <#else>
+    <h3>No products</h3>
 </#list>
 <hr>
 <h3>Create new product</h3>
